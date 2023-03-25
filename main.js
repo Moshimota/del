@@ -10,9 +10,7 @@
     del = document.querySelector(".del")
     del.onclick = () => {   
         const hed = document.querySelector(".kak")
-        const inp = document.querySelector(".form-control")
         hed.innerHTML = ""
-        inp.value = ""
     }
     add = document.querySelector(".add")
     add.onclick=(e)=>{

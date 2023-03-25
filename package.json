@@ -1,0 +1,23 @@
+{
+  "name": "node-js-go",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moshimota/del.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moshimota/del/issues"
+  },
+  "homepage": "https://github.com/Moshimota/del#readme",
+  "dependencies": {
+    "json-server": "^0.17.3"
+  }
+}

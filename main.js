@@ -1,16 +1,33 @@
-document.addEventListener("keydown", e => {
-    if (e.key == "Delete") {
+    getData = async () => {
+        const url = await fetch("http://localhost:3000/data")
+        const json = await url.json()
+        const hed = document.querySelector(".kak")
+        json?.map((res) => {
+            hed.innerHTML = res?.name
+        })
+    }
+    getData()
+    del = document.querySelector(".del")
+    del.onclick = () => {   
         const hed = document.querySelector(".kak")
         const inp = document.querySelector(".form-control")
         hed.innerHTML = ""
-        inp.value = ""
-    }else if (e.key == "Enter"){
-        const hed = document.querySelector(".kak")
-        const inp = document.querySelector(".form-control")
-        hed.innerHTML =inp.value
         inp.value = ""
     }
-})
-const hed = document.querySelector(".kak")
+    add = document.querySelector(".add")
+    add.onclick=(e)=>{
+        e.preventDefault()
+        postData()
+    }
+    const postData = () => {
         const inp = document.querySelector(".form-control")
-        hed.innerHTML = ""
+        const val = inp.value
+        fetch("http://localhost:3000/data", {
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({name: val})
+        })
+        .then((data) => alert(data.statusText))
+    }
